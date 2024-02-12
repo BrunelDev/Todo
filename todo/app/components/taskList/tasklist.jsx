@@ -47,15 +47,15 @@ const [add, setAdd] = useState(false)
           else{
             return(
           
-          <tr key={index} className="odd:bg-white even:bg-slate-50 my-96 ">
-            <td className="px-24" onClick={()=>{dispatch({type: "SHOW_ACTIONS", payload: task})}}>{task.taskName}</td>
-            <td className="px-24" onClick={()=>{dispatch({type: "SHOW_ACTIONS", payload: task})}}>{task.creationDate}</td>
-            <td className="px-24" onClick={()=>{dispatch({type: "SHOW_ACTIONS", payload: task})}}>{task.deadline}</td>
+          <tr key={index} className="even:bg-violetta odd:bg-slate-50 my-96 ">
+            <td className="h-12 pr-40 pl-10" onClick={()=>{dispatch({type: "SHOW_ACTIONS", payload: task})}}>{task.taskName}</td>
+            <td className="h-12 pr-40 pl-10" onClick={()=>{dispatch({type: "SHOW_ACTIONS", payload: task})}}>{task.creationDate}</td>
+            <td className="h-12 pr-40 pl-10" onClick={()=>{dispatch({type: "SHOW_ACTIONS", payload: task})}}>{task.deadline}</td>
             
-            {task.show && <span>
-              <button type="button" onClick = {()=>{dispatch({type: "ADD_ONE", payload: index})
+            {task.show && <span className='bg-red-500'>
+              <button type="button" className='bg-red-500' onClick = {()=>{dispatch({type: "ADD_ONE", payload: index})
             console.log(task)}}><PlusCircle size={28} color="#04c311" strokeWidth={1.5} /></button>
-              <button type="button" onClick={()=>dispatch({type:'DELETE_ONE', payload: task})}><Trash2 size={28} color="#f20202" strokeWidth={1.5} /></button>
+              <button type="button" className='bg-red-500' onClick={()=>dispatch({type:'DELETE_ONE', payload: task})}><Trash2 size={28} color="#f20202" strokeWidth={1.5} /></button>
             </span>}
             </tr>)
           }

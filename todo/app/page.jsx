@@ -67,11 +67,11 @@ export default function Home(){
   }
 
   return(
-    <>
-    <div>
-      <table>
+    <body style={{backgroundImage:'url("/todoBg1.jpeg")'}}>
+    <div className="pl-96">
+      <table className="ml-24 mt-12">
         <thead>
-          <tr>
+          <tr className="bg-deepViolet">
           <th>
             Tâches
           </th>
@@ -89,7 +89,7 @@ export default function Home(){
         </tbody>
       </table>
     </div>
-    </>
+    </body>
       
   )
 }
