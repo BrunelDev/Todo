@@ -58,7 +58,7 @@ export function TaskList({tasks}) {
                 }}>
                   <PlusCircle size={28} color="#04c311" strokeWidth={1.5} />
                 </button>
-                <button type="button" onClick={() => dispatch({type:'DELETE_ONE', payload: task})}>
+                <button on type="button" onClick={() => dispatch({type:'DELETE_ONE', payload: task})}>
                   <Trash2 size={28} color="#f20202" strokeWidth={1.5} />
                 </button>
               </span>}
