@@ -41,7 +41,6 @@ export function TaskList({tasks}) {
 
   return (
     <>
-      {console.log(state.todo)}
       {state.todo.map((task, index) => {
         if(task.type === TaskInput){
           return task

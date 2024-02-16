@@ -1,54 +1,16 @@
 'use client'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { TaskList } from './components/taskList/tasklist.jsx'
+import { FetchTodo } from './components/data/fetchtodo.jsx'
 
 export default function Home(){
 
   const a = '20:12:39'
-  const [tasks, setTasks] = useState([
-    {
-      taskName: "Chier",
-      creationDate: a,
-      deadline: "Demain",
-      show: false,
-      showNext: false
-    },
-    {
-      taskName: "Chier",
-      creationDate: a,
-      deadline: "Demain",
-      show: false,
-      showNext: false
-    },
-    {
-      taskName: "Chier",
-      creationDate: a,
-      deadline: "Demain",
-      show: false,
-      showNext: false
-    },
-    {
-      taskName: "Chier",
-      creationDate: a,
-      deadline: "Demain",
-      show: false,
-      showNext: false
-    },
-    {
-      taskName: "Chier",
-      creationDate: a,
-      deadline: "Demain",
-      show: false,
-      showNext: false
-    },
-    {
-      taskName: "Chier",
-      creationDate: a,
-      deadline: "Demain",
-      show: false,
-      showNext: false
-    }
-  ])
+  const [tasks, setTasks] = useState([])
+  useEffect(()=>{
+    FetchTodo({method : 'get', setTab : setTasks})
+  }, [])
+   
   
   
   return(
@@ -69,7 +31,8 @@ export default function Home(){
             </tr>
           </thead>
           <tbody>
-            <TaskList tasks={tasks} />
+            {tasks.length > 0 && <TaskList tasks={tasks} />}
+            {console.log(tasks)}
           </tbody>
         </table>
       </div>
